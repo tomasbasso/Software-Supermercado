@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_inicioSesion));
             this.txt_contraseña = new System.Windows.Forms.TextBox();
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.label_contraseña = new System.Windows.Forms.Label();
@@ -103,8 +104,10 @@
             this.Controls.Add(this.label_contraseña);
             this.Controls.Add(this.label_usuario);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Frm_inicioSesion";
             this.Text = "Inicio de sesión";
+            this.Load += new System.EventHandler(this.Frm_inicioSesion_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

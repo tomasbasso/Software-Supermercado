@@ -15,9 +15,11 @@ namespace Tp2_TomasBasso.Models
     public partial class SESION
     {
         public int Sesion_ID { get; set; }
-        public decimal Usuario_ID { get; set; }
+        public int UsuarioID { get; set; }
         public System.DateTime Fecha { get; set; }
-        public System.DateTime Hora_incio { get; set; }
+        public System.DateTime Hora_inicio { get; set; }
         public System.DateTime Hora_Finalizacion { get; set; }
+    
+        public virtual USUARIOS USUARIOS { get; set; }
     }
 }

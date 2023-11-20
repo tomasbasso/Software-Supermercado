@@ -14,11 +14,20 @@ namespace Tp2_TomasBasso.Models
     
     public partial class USUARIOS
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public USUARIOS()
+        {
+            this.SESION = new HashSet<SESION>();
+        }
+    
         public int UsuarioID { get; set; }
         public string NombreUsuario { get; set; }
         public string Acceso { get; set; }
         public string Email { get; set; }
         public string Celular { get; set; }
         public string Contraseña { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SESION> SESION { get; set; }
     }
 }

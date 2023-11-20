@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.txt_cantidad = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btn_buscar = new System.Windows.Forms.Button();
@@ -58,23 +59,23 @@
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridView1.Location = new System.Drawing.Point(0, 464);
             this.dataGridView1.Name = "dataGridView1";
@@ -88,6 +89,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.txt_cantidad);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.btn_buscar);
@@ -105,12 +107,24 @@
             this.panel1.Size = new System.Drawing.Size(1391, 154);
             this.panel1.TabIndex = 31;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.SystemColors.Control;
+            this.label2.Location = new System.Drawing.Point(1131, 106);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(80, 16);
+            this.label2.TabIndex = 32;
+            this.label2.Text = "(Por detalle)";
+            // 
             // txt_cantidad
             // 
             this.txt_cantidad.Location = new System.Drawing.Point(720, 91);
             this.txt_cantidad.Name = "txt_cantidad";
             this.txt_cantidad.Size = new System.Drawing.Size(204, 22);
             this.txt_cantidad.TabIndex = 31;
+            this.txt_cantidad.TextChanged += new System.EventHandler(this.txt_cantidad_TextChanged);
+            this.txt_cantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cantidad_KeyPress);
             // 
             // label3
             // 
@@ -178,6 +192,8 @@
             this.txt_precioc.Name = "txt_precioc";
             this.txt_precioc.Size = new System.Drawing.Size(204, 22);
             this.txt_precioc.TabIndex = 24;
+            this.txt_precioc.TextChanged += new System.EventHandler(this.txt_precioc_TextChanged);
+            this.txt_precioc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_precioc_KeyPress);
             // 
             // label5
             // 
@@ -197,6 +213,8 @@
             this.txt_preciov.Name = "txt_preciov";
             this.txt_preciov.Size = new System.Drawing.Size(204, 22);
             this.txt_preciov.TabIndex = 20;
+            this.txt_preciov.TextChanged += new System.EventHandler(this.txt_preciov_TextChanged);
+            this.txt_preciov.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_preciov_KeyPress);
             // 
             // label4
             // 
@@ -237,9 +255,9 @@
             this.btn_eliminar.ForeColor = System.Drawing.SystemColors.Control;
             this.btn_eliminar.Image = global::Tp2_TomasBasso.Properties.Resources.borrar;
             this.btn_eliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_eliminar.Location = new System.Drawing.Point(540, 289);
+            this.btn_eliminar.Location = new System.Drawing.Point(540, 308);
             this.btn_eliminar.Name = "btn_eliminar";
-            this.btn_eliminar.Size = new System.Drawing.Size(135, 95);
+            this.btn_eliminar.Size = new System.Drawing.Size(128, 76);
             this.btn_eliminar.TabIndex = 35;
             this.btn_eliminar.Text = "Eliminar seleccion";
             this.btn_eliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -252,9 +270,9 @@
             this.btn_habilitar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_habilitar.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_habilitar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btn_habilitar.Location = new System.Drawing.Point(234, 282);
+            this.btn_habilitar.Location = new System.Drawing.Point(234, 308);
             this.btn_habilitar.Name = "btn_habilitar";
-            this.btn_habilitar.Size = new System.Drawing.Size(187, 102);
+            this.btn_habilitar.Size = new System.Drawing.Size(187, 76);
             this.btn_habilitar.TabIndex = 34;
             this.btn_habilitar.Text = "Habilitar edicion de tabla";
             this.btn_habilitar.UseVisualStyleBackColor = false;
@@ -270,9 +288,9 @@
             this.Btn_guardar.ForeColor = System.Drawing.SystemColors.Control;
             this.Btn_guardar.Image = global::Tp2_TomasBasso.Properties.Resources.guardar;
             this.Btn_guardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_guardar.Location = new System.Drawing.Point(1193, 374);
+            this.Btn_guardar.Location = new System.Drawing.Point(1156, 324);
             this.Btn_guardar.Name = "Btn_guardar";
-            this.Btn_guardar.Size = new System.Drawing.Size(201, 60);
+            this.Btn_guardar.Size = new System.Drawing.Size(238, 60);
             this.Btn_guardar.TabIndex = 33;
             this.Btn_guardar.Text = "Guardar cambios";
             this.Btn_guardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -283,12 +301,12 @@
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Lucida Calligraphy", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Image = global::Tp2_TomasBasso.Properties.Resources.Articulos;
             this.label8.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label8.Location = new System.Drawing.Point(588, 21);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(242, 59);
+            this.label8.Size = new System.Drawing.Size(292, 56);
             this.label8.TabIndex = 41;
             this.label8.Text = "Artículos   ";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -343,5 +361,6 @@
         private System.Windows.Forms.Button btn_agregar;
         private System.Windows.Forms.TextBox txt_cantidad;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
     }
 }

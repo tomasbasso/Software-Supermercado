@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_buscarclie = new System.Windows.Forms.Button();
@@ -93,6 +93,7 @@
             this.btn_buscarclie.TabIndex = 27;
             this.btn_buscarclie.Text = "Buscar";
             this.btn_buscarclie.UseVisualStyleBackColor = true;
+            this.btn_buscarclie.Click += new System.EventHandler(this.btn_buscarclie_Click);
             // 
             // label6
             // 
@@ -123,6 +124,7 @@
             this.text_dni.Name = "text_dni";
             this.text_dni.Size = new System.Drawing.Size(163, 22);
             this.text_dni.TabIndex = 3;
+            this.text_dni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.text_dni_KeyPress);
             // 
             // radioButton2
             // 
@@ -162,7 +164,7 @@
             // 
             this.btn_finalizar.Enabled = false;
             this.btn_finalizar.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_finalizar.Location = new System.Drawing.Point(1034, 555);
+            this.btn_finalizar.Location = new System.Drawing.Point(1010, 555);
             this.btn_finalizar.Name = "btn_finalizar";
             this.btn_finalizar.Size = new System.Drawing.Size(163, 76);
             this.btn_finalizar.TabIndex = 74;
@@ -173,14 +175,14 @@
             // dataGridView
             // 
             this.dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Detalle,
@@ -192,9 +194,9 @@
             this.dataGridView.Location = new System.Drawing.Point(86, 311);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            this.dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView.RowTemplate.Height = 24;
             this.dataGridView.Size = new System.Drawing.Size(881, 345);
             this.dataGridView.TabIndex = 73;
@@ -247,12 +249,15 @@
             // btn_buscar
             // 
             this.btn_buscar.Enabled = false;
+            this.btn_buscar.Image = global::Tp2_TomasBasso.Properties.Resources.Buscar;
+            this.btn_buscar.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.btn_buscar.Location = new System.Drawing.Point(551, 239);
             this.btn_buscar.Name = "btn_buscar";
-            this.btn_buscar.Size = new System.Drawing.Size(81, 43);
+            this.btn_buscar.Size = new System.Drawing.Size(125, 43);
             this.btn_buscar.TabIndex = 71;
             this.btn_buscar.Text = "Buscar";
             this.btn_buscar.UseVisualStyleBackColor = true;
+            
             // 
             // btn_Agregar
             // 
@@ -300,17 +305,18 @@
             this.textBoxid.Name = "textBoxid";
             this.textBoxid.Size = new System.Drawing.Size(278, 22);
             this.textBoxid.TabIndex = 66;
+            this.textBoxid.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxid_KeyPress);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Lucida Calligraphy", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Image = global::Tp2_TomasBasso.Properties.Resources.Articulos;
             this.label8.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label8.Location = new System.Drawing.Point(264, 16);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(301, 89);
+            this.label8.Size = new System.Drawing.Size(362, 87);
             this.label8.TabIndex = 65;
             this.label8.Text = "Ventas   ";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

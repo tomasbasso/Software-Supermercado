@@ -18,7 +18,7 @@ namespace Tp2_TomasBasso
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Frm_MENU());
+            Application.Run(new Frm_inicioSesion());
         }
     }
 }

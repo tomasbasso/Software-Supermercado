@@ -23,33 +23,50 @@ namespace Tp2_TomasBasso
         
         private void btn_inicio_Click(object sender, EventArgs e)
         {
-
-
-            
-            using (Models.DDBB_SupermercadoEntities2 DDBB = new Models.DDBB_SupermercadoEntities2()) 
+            string usuarion;
+            using (Models.DDBB_SupermercadoEntities2 DDBB = new Models.DDBB_SupermercadoEntities2())
             {
-                var lista = from d in DDBB.USUARIOS
-                            where d.NombreUsuario == txt_nombre.Text
-                            && d.Contraseña == txt_contraseña.Text
-                            select d; //VERIFICO USUARIO Y CONTRASEÑA
-                if (lista.Count() > 0)
+                var usuario = (from d in DDBB.USUARIOS
+                               where d.NombreUsuario == txt_nombre.Text
+                               && d.Contraseña == txt_contraseña.Text
+                               select d).FirstOrDefault(); // Buscar el usuario
+                
+                if (usuario != null)
                 {
-                    MessageBox.Show("Bienvenido/a "+ txt_nombre.Text);
-                    
-                    Frm_MENU fm = new Frm_MENU();
-                    fm.Show();
-                    this.Hide();
+                    usuarion =Convert.ToString( usuario.UsuarioID);
+                    MessageBox.Show("Bienvenido/a " + txt_nombre.Text);
 
+                    if (usuario.Acceso == "Administrativo")
+                    {
+                        Frm_MenuAdmin fm = new Frm_MenuAdmin();
+                        fm.iduser =usuarion;
+                        fm.Show();
+
+                    }
+                    else if (usuario.Acceso == "Gerente")
+                    {
+                        Frm_MenuNormal fm = new Frm_MenuNormal();
+                        fm.iduser = usuarion;
+                        fm.Show();
+                        
+                    }
+
+                    this.Hide();
                 }
-                else {
-                    MessageBox.Show("Error en usuario o contraseña, intentolo nuevamente");
+                else
+                {
+                    MessageBox.Show("Error en usuario o contraseña, inténtelo nuevamente");
                 }
             }
-       
+            
 
-          
+
+
         }
 
-        
+        private void Frm_inicioSesion_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

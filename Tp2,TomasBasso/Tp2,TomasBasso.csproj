@@ -14,6 +14,22 @@
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Usuario\Desktop\Los dos chinos\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -34,6 +50,18 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>5B9CF09A3DB772FB655D09C75878D253F6A73945</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Tp2,TomasBasso_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
@@ -41,7 +69,22 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="HarfBuzzSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\packages\HarfBuzzSharp.2.8.2.3\lib\net462\HarfBuzzSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="QuestPDF, Version=2022.12.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\QuestPDF.2022.12.7\lib\net462\QuestPDF.dll</HintPath>
+    </Reference>
+    <Reference Include="SkiaSharp, Version=2.88.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\packages\SkiaSharp.2.88.3\lib\net462\SkiaSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="SkiaSharp.HarfBuzz, Version=2.88.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\packages\SkiaSharp.HarfBuzz.2.88.3\lib\net462\SkiaSharp.HarfBuzz.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.4.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -53,10 +96,20 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.4.3.1\lib\net462\System.Runtime.dll</HintPath>
       <Private>True</Private>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
@@ -93,11 +146,29 @@
     <Compile Include="Frm_camara.Designer.cs">
       <DependentUpon>Frm_camara.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_Secion.cs">
+    <Compile Include="Frm_MenuAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_Secion.Designer.cs">
-      <DependentUpon>Frm_Secion.cs</DependentUpon>
+    <Compile Include="Frm_MenuAdmin.Designer.cs">
+      <DependentUpon>Frm_MenuAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_MenuNormal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_MenuNormal.Designer.cs">
+      <DependentUpon>Frm_MenuNormal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Sesion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Sesion.Designer.cs">
+      <DependentUpon>Frm_Sesion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_VerArticulos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_VerArticulos.Designer.cs">
+      <DependentUpon>Frm_VerArticulos.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\ARTICULO.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -157,12 +228,6 @@
     <Compile Include="Frm_inicioSecion.Designer.cs">
       <DependentUpon>Frm_inicioSecion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_MENU.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm_MENU.Designer.cs">
-      <DependentUpon>Frm_MENU.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Ventas\Frm_Venta.cs">
@@ -192,14 +257,17 @@
     <EmbeddedResource Include="Frm_inicioSecion.resx">
       <DependentUpon>Frm_inicioSecion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_MENU.es-AR.resx">
-      <DependentUpon>Frm_MENU.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_MenuAdmin.resx">
+      <DependentUpon>Frm_MenuAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_MENU.resx">
-      <DependentUpon>Frm_MENU.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_MenuNormal.resx">
+      <DependentUpon>Frm_MenuNormal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_Secion.resx">
-      <DependentUpon>Frm_Secion.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_Sesion.resx">
+      <DependentUpon>Frm_Sesion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_VerArticulos.resx">
+      <DependentUpon>Frm_VerArticulos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Proveedores\Frm_proveedores.resx">
       <DependentUpon>Frm_proveedores.cs</DependentUpon>
@@ -254,6 +322,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Tp2,TomasBasso_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -308,6 +377,40 @@
     <None Include="Resources\borrar.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -320,4 +423,17 @@
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\HarfBuzzSharp.NativeAssets.macOS.2.8.2.3\build\net462\HarfBuzzSharp.NativeAssets.macOS.targets" Condition="Exists('..\packages\HarfBuzzSharp.NativeAssets.macOS.2.8.2.3\build\net462\HarfBuzzSharp.NativeAssets.macOS.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\HarfBuzzSharp.NativeAssets.macOS.2.8.2.3\build\net462\HarfBuzzSharp.NativeAssets.macOS.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\HarfBuzzSharp.NativeAssets.macOS.2.8.2.3\build\net462\HarfBuzzSharp.NativeAssets.macOS.targets'))" />
+    <Error Condition="!Exists('..\packages\HarfBuzzSharp.NativeAssets.Win32.2.8.2.3\build\net462\HarfBuzzSharp.NativeAssets.Win32.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\HarfBuzzSharp.NativeAssets.Win32.2.8.2.3\build\net462\HarfBuzzSharp.NativeAssets.Win32.targets'))" />
+    <Error Condition="!Exists('..\packages\SkiaSharp.NativeAssets.macOS.2.88.3\build\net462\SkiaSharp.NativeAssets.macOS.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SkiaSharp.NativeAssets.macOS.2.88.3\build\net462\SkiaSharp.NativeAssets.macOS.targets'))" />
+    <Error Condition="!Exists('..\packages\SkiaSharp.NativeAssets.Win32.2.88.3\build\net462\SkiaSharp.NativeAssets.Win32.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SkiaSharp.NativeAssets.Win32.2.88.3\build\net462\SkiaSharp.NativeAssets.Win32.targets'))" />
+  </Target>
+  <Import Project="..\packages\HarfBuzzSharp.NativeAssets.Win32.2.8.2.3\build\net462\HarfBuzzSharp.NativeAssets.Win32.targets" Condition="Exists('..\packages\HarfBuzzSharp.NativeAssets.Win32.2.8.2.3\build\net462\HarfBuzzSharp.NativeAssets.Win32.targets')" />
+  <Import Project="..\packages\SkiaSharp.NativeAssets.macOS.2.88.3\build\net462\SkiaSharp.NativeAssets.macOS.targets" Condition="Exists('..\packages\SkiaSharp.NativeAssets.macOS.2.88.3\build\net462\SkiaSharp.NativeAssets.macOS.targets')" />
+  <Import Project="..\packages\SkiaSharp.NativeAssets.Win32.2.88.3\build\net462\SkiaSharp.NativeAssets.Win32.targets" Condition="Exists('..\packages\SkiaSharp.NativeAssets.Win32.2.88.3\build\net462\SkiaSharp.NativeAssets.Win32.targets')" />
 </Project>

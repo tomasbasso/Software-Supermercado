@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label8 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -63,10 +63,10 @@
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Tahoma", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(177, 88);
+            this.label8.Font = new System.Drawing.Font("Lucida Calligraphy", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(109, 77);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(597, 52);
+            this.label8.Size = new System.Drawing.Size(665, 56);
             this.label8.TabIndex = 42;
             this.label8.Text = "Administracion de clientes";
             // 
@@ -133,9 +133,9 @@
             this.btn_agregar.BackgroundImage = global::Tp2_TomasBasso.Properties.Resources.icons8_añadir_usuario_masculino_50;
             this.btn_agregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn_agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_agregar.Location = new System.Drawing.Point(871, 37);
+            this.btn_agregar.Location = new System.Drawing.Point(922, 29);
             this.btn_agregar.Name = "btn_agregar";
-            this.btn_agregar.Size = new System.Drawing.Size(121, 61);
+            this.btn_agregar.Size = new System.Drawing.Size(137, 61);
             this.btn_agregar.TabIndex = 45;
             this.btn_agregar.Text = "Cargar";
             this.btn_agregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -232,10 +232,10 @@
             // 
             // btn_eliminar
             // 
-            this.btn_eliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.btn_eliminar.BackColor = System.Drawing.Color.White;
             this.btn_eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_eliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_eliminar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_eliminar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_eliminar.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.btn_eliminar.Location = new System.Drawing.Point(980, 510);
             this.btn_eliminar.Name = "btn_eliminar";
@@ -247,10 +247,10 @@
             // 
             // btn_habilitar
             // 
-            this.btn_habilitar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.btn_habilitar.BackColor = System.Drawing.Color.White;
             this.btn_habilitar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_habilitar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_habilitar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_habilitar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_habilitar.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.btn_habilitar.Location = new System.Drawing.Point(980, 398);
             this.btn_habilitar.Name = "btn_habilitar";
@@ -262,12 +262,12 @@
             // 
             // Btn_guardar
             // 
-            this.Btn_guardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.Btn_guardar.BackColor = System.Drawing.Color.White;
             this.Btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Btn_guardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_guardar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.Btn_guardar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Btn_guardar.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.Btn_guardar.Location = new System.Drawing.Point(980, 652);
+            this.Btn_guardar.Location = new System.Drawing.Point(980, 633);
             this.Btn_guardar.Name = "Btn_guardar";
             this.Btn_guardar.Size = new System.Drawing.Size(137, 60);
             this.Btn_guardar.TabIndex = 45;
@@ -283,30 +283,30 @@
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.Location = new System.Drawing.Point(49, 398);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(890, 314);
+            this.dataGridView1.Size = new System.Drawing.Size(845, 314);
             this.dataGridView1.TabIndex = 48;
             // 
             // dDBB_SupermercadoDataSet
@@ -326,7 +326,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
             this.BackgroundImage = global::Tp2_TomasBasso.Properties.Resources.fondo;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1234, 741);
+            this.ClientSize = new System.Drawing.Size(1532, 741);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btn_eliminar);
             this.Controls.Add(this.btn_habilitar);

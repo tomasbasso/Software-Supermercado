@@ -15,8 +15,10 @@ namespace Tp2_TomasBasso.Models
     public partial class VENTAS
     {
         public int VentaID { get; set; }
-        public string IDcliente { get; set; }
+        public int IDcliente { get; set; }
         public decimal Monto { get; set; }
         public System.DateTime Fecha { get; set; }
+    
+        public virtual CLIENTES CLIENTES { get; set; }
     }
 }

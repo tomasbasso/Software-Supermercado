@@ -38,8 +38,6 @@
             this.txt_contraseña = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txt_id = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -101,7 +99,7 @@
             this.cmb_acceso.Items.AddRange(new object[] {
             "Administrativo",
             "Gerente"});
-            this.cmb_acceso.Location = new System.Drawing.Point(177, 91);
+            this.cmb_acceso.Location = new System.Drawing.Point(180, 75);
             this.cmb_acceso.Name = "cmb_acceso";
             this.cmb_acceso.Size = new System.Drawing.Size(204, 24);
             this.cmb_acceso.TabIndex = 21;
@@ -131,34 +129,15 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.MistyRose;
-            this.label3.Location = new System.Drawing.Point(70, 91);
+            this.label3.Location = new System.Drawing.Point(73, 75);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 24);
             this.label3.TabIndex = 18;
             this.label3.Text = "Acceso:";
             // 
-            // txt_id
-            // 
-            this.txt_id.Location = new System.Drawing.Point(177, 18);
-            this.txt_id.Name = "txt_id";
-            this.txt_id.Size = new System.Drawing.Size(204, 22);
-            this.txt_id.TabIndex = 17;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.MistyRose;
-            this.label2.Location = new System.Drawing.Point(46, 16);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 24);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "UsuarioID:";
-            // 
             // txt_nombre
             // 
-            this.txt_nombre.Location = new System.Drawing.Point(177, 55);
+            this.txt_nombre.Location = new System.Drawing.Point(180, 39);
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(204, 22);
             this.txt_nombre.TabIndex = 15;
@@ -169,7 +148,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.MistyRose;
-            this.label1.Location = new System.Drawing.Point(60, 53);
+            this.label1.Location = new System.Drawing.Point(63, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 24);
             this.label1.TabIndex = 14;
@@ -188,8 +167,6 @@
             this.panel1.Controls.Add(this.txt_contraseña);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.txt_id);
-            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.txt_nombre);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(32, 102);
@@ -216,7 +193,7 @@
             this.btn_agregar.BackgroundImage = global::Tp2_TomasBasso.Properties.Resources.icons8_añadir_usuario_masculino_50;
             this.btn_agregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn_agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_agregar.Location = new System.Drawing.Point(858, 16);
+            this.btn_agregar.Location = new System.Drawing.Point(858, 18);
             this.btn_agregar.Name = "btn_agregar";
             this.btn_agregar.Size = new System.Drawing.Size(121, 62);
             this.btn_agregar.TabIndex = 22;
@@ -232,7 +209,7 @@
             this.btn_habilitar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_habilitar.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_habilitar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btn_habilitar.Location = new System.Drawing.Point(1051, 291);
+            this.btn_habilitar.Location = new System.Drawing.Point(1172, 314);
             this.btn_habilitar.Name = "btn_habilitar";
             this.btn_habilitar.Size = new System.Drawing.Size(171, 78);
             this.btn_habilitar.TabIndex = 31;
@@ -246,7 +223,7 @@
             this.btn_eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_eliminar.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_eliminar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btn_eliminar.Location = new System.Drawing.Point(1051, 407);
+            this.btn_eliminar.Location = new System.Drawing.Point(1172, 430);
             this.btn_eliminar.Name = "btn_eliminar";
             this.btn_eliminar.Size = new System.Drawing.Size(171, 70);
             this.btn_eliminar.TabIndex = 32;
@@ -258,10 +235,10 @@
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Lucida Calligraphy", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(457, 23);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(198, 59);
+            this.label8.Size = new System.Drawing.Size(236, 56);
             this.label8.TabIndex = 40;
             this.label8.Text = "Usuarios";
             // 
@@ -269,7 +246,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::Tp2_TomasBasso.Properties.Resources.user;
-            this.pictureBox1.Location = new System.Drawing.Point(682, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(699, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(86, 71);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -284,7 +261,7 @@
             this.Btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Btn_guardar.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_guardar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Btn_guardar.Location = new System.Drawing.Point(1051, 655);
+            this.Btn_guardar.Location = new System.Drawing.Point(1172, 633);
             this.Btn_guardar.Name = "Btn_guardar";
             this.Btn_guardar.Size = new System.Drawing.Size(171, 53);
             this.Btn_guardar.TabIndex = 28;
@@ -325,7 +302,7 @@
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(918, 483);
+            this.dataGridView1.Size = new System.Drawing.Size(894, 483);
             this.dataGridView1.TabIndex = 41;
             // 
             // Frm_Usuario
@@ -335,7 +312,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
             this.BackgroundImage = global::Tp2_TomasBasso.Properties.Resources.fondo;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1262, 782);
+            this.ClientSize = new System.Drawing.Size(1455, 782);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.pictureBox1);
@@ -369,8 +346,6 @@
         private System.Windows.Forms.TextBox txt_contraseña;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txt_id;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt_nombre;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_buscar;

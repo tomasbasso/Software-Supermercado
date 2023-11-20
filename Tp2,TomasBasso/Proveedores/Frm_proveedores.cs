@@ -29,7 +29,7 @@ namespace Tp2_TomasBasso.Proveedores
 
         private void btn_volver_Click(object sender, EventArgs e)
         {
-            Frm_MENU frm_MENU = new Frm_MENU();
+            Frm_MenuAdmin frm_MENU = new Frm_MenuAdmin();
             this.Hide();
             frm_MENU.Show();
         }
@@ -37,9 +37,16 @@ namespace Tp2_TomasBasso.Proveedores
 
         private void Btn_guardar_Click(object sender, EventArgs e)
         {
-            ddbb.SaveChanges();
-            RefrescarGrilla();
-            dataGridView1.ReadOnly = true;
+            // Muestra un MessageBox de confirmación
+            DialogResult resultado = MessageBox.Show("¿Estás seguro de que deseas guardar los cambios?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.Yes)
+            {
+                ddbb.SaveChanges();
+                RefrescarGrilla();
+                dataGridView1.ReadOnly = true; //BLOQUEAMOS TABLA
+                MessageBox.Show("Los cambios han sido guardados.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void btn_habilitar_Click(object sender, EventArgs e)
@@ -64,17 +71,23 @@ namespace Tp2_TomasBasso.Proveedores
 
         private void btn_eliminar_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
-            {
+            // Muestra un MessageBox de confirmación
+            DialogResult resultado = MessageBox.Show("¿Estás seguro de que deseas borrar este artículo?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
-                int Provedorid = Convert.ToInt32(selectedRow.Cells["ProveedorID"].Value);//LE ASIGNO A USUARIO ID EL EMPLEADO SELECCIONADO
-                EliminarUsuario(Provedorid);
-                RefrescarGrilla();
-            }
-            else
+            if (resultado == DialogResult.Yes)
             {
-                MessageBox.Show("Seleccione un proveedor para eliminar.");
+                if (dataGridView1.SelectedRows.Count > 0)
+                {
+
+                    DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
+                    int Provedorid = Convert.ToInt32(selectedRow.Cells["ProveedorID"].Value);//LE ASIGNO A USUARIO ID EL EMPLEADO SELECCIONADO
+                    EliminarUsuario(Provedorid);
+                    RefrescarGrilla();
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione un proveedor para eliminar.");
+                }
             }
         }
 
@@ -98,13 +111,12 @@ namespace Tp2_TomasBasso.Proveedores
 
                 MessageBox.Show("El proveedor " + txt_nombre.Text + " ha sido agregado con exito!");
 
-                txt_nombre.Text = "";
-                txt_rubro.Text = "";
-              
-                txt_celular.Text = "";
-                txt_email.Text = "";
-                txt_Cuit.Text = "";
-                txt_direccion.Text = "";
+                txt_nombre.Clear();
+                txt_rubro.Clear();
+                txt_celular.Clear();
+                txt_email.Clear();
+                txt_Cuit.Clear();
+                txt_direccion.Clear();
             
             
         }

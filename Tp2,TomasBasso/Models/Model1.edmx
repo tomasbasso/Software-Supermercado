@@ -21,11 +21,11 @@
             <PropertyRef Name="IDcliente" />
           </Key>
           <Property Name="IDcliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="NombreCompleto" Type="varchar" MaxLength="50" />
-          <Property Name="Dni" Type="int" />
-          <Property Name="Direccion" Type="varchar" MaxLength="50" />
-          <Property Name="RazonSocial" Type="varchar" MaxLength="50" />
-          <Property Name="CUIT" Type="varchar" MaxLength="11" />
+          <Property Name="NombreCompleto" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Dni" Type="int" Nullable="false" />
+          <Property Name="Direccion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="RazonSocial" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CUIT" Type="varchar" MaxLength="11" Nullable="false" />
         </EntityType>
         <EntityType Name="PROVEEDOR">
           <Key>
@@ -44,9 +44,9 @@
             <PropertyRef Name="Sesion ID" />
           </Key>
           <Property Name="Sesion ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Usuario ID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="UsuarioID" Type="int" Nullable="false" />
           <Property Name="Fecha" Type="date" Nullable="false" />
-          <Property Name="Hora incio" Type="datetime" Nullable="false" />
+          <Property Name="Hora inicio" Type="datetime" Nullable="false" />
           <Property Name="Hora Finalizacion" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="SUPERMERCADO">
@@ -83,10 +83,34 @@
             <PropertyRef Name="VentaID" />
           </Key>
           <Property Name="VentaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="IDcliente" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="IDcliente" Type="int" Nullable="false" />
           <Property Name="Monto" Type="numeric" Precision="18" Scale="2" Nullable="false" />
           <Property Name="Fecha" Type="date" Nullable="false" />
         </EntityType>
+        <Association Name="FK_SESION_USUARIOS">
+          <End Role="USUARIOS" Type="Self.USUARIOS" Multiplicity="1" />
+          <End Role="SESION" Type="Self.SESION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIOS">
+              <PropertyRef Name="UsuarioID" />
+            </Principal>
+            <Dependent Role="SESION">
+              <PropertyRef Name="UsuarioID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VENTAS_CLIENTES">
+          <End Role="CLIENTES" Type="Self.CLIENTES" Multiplicity="1" />
+          <End Role="VENTAS" Type="Self.VENTAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLIENTES">
+              <PropertyRef Name="IDcliente" />
+            </Principal>
+            <Dependent Role="VENTAS">
+              <PropertyRef Name="IDcliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="DDBB_SupermercadoModelStoreContainer">
           <EntitySet Name="ARTICULO" EntityType="Self.ARTICULO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CLIENTES" EntityType="Self.CLIENTES" Schema="dbo" store:Type="Tables" />
@@ -96,6 +120,14 @@
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="USUARIOS" EntityType="Self.USUARIOS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="VENTAS" EntityType="Self.VENTAS" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_SESION_USUARIOS" Association="Self.FK_SESION_USUARIOS">
+            <End Role="USUARIOS" EntitySet="USUARIOS" />
+            <End Role="SESION" EntitySet="SESION" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VENTAS_CLIENTES" Association="Self.FK_VENTAS_CLIENTES">
+            <End Role="CLIENTES" EntitySet="CLIENTES" />
+            <End Role="VENTAS" EntitySet="VENTAS" />
+          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
@@ -118,11 +150,12 @@
             <PropertyRef Name="IDcliente" />
           </Key>
           <Property Name="IDcliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="NombreCompleto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Dni" Type="Int32" />
-          <Property Name="Direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="RazonSocial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="CUIT" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="NombreCompleto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Dni" Type="Int32" Nullable="false" />
+          <Property Name="Direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RazonSocial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CUIT" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="VENTAS" Relationship="Self.FK_VENTAS_CLIENTES" FromRole="CLIENTES" ToRole="VENTAS" />
         </EntityType>
         <EntityType Name="PROVEEDOR">
           <Key>
@@ -141,10 +174,11 @@
             <PropertyRef Name="Sesion_ID" />
           </Key>
           <Property Name="Sesion_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Usuario_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="UsuarioID" Type="Int32" Nullable="false" />
           <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="Hora_incio" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Hora_inicio" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Hora_Finalizacion" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="USUARIOS" Relationship="Self.FK_SESION_USUARIOS" FromRole="SESION" ToRole="USUARIOS" />
         </EntityType>
         <EntityType Name="SUPERMERCADO">
           <Key>
@@ -174,16 +208,42 @@
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Celular" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="Contraseña" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="SESION" Relationship="Self.FK_SESION_USUARIOS" FromRole="USUARIOS" ToRole="SESION" />
         </EntityType>
         <EntityType Name="VENTAS">
           <Key>
             <PropertyRef Name="VentaID" />
           </Key>
           <Property Name="VentaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IDcliente" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="IDcliente" Type="Int32" Nullable="false" />
           <Property Name="Monto" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="CLIENTES" Relationship="Self.FK_VENTAS_CLIENTES" FromRole="VENTAS" ToRole="CLIENTES" />
         </EntityType>
+        <Association Name="FK_VENTAS_CLIENTES">
+          <End Role="CLIENTES" Type="Self.CLIENTES" Multiplicity="1" />
+          <End Role="VENTAS" Type="Self.VENTAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLIENTES">
+              <PropertyRef Name="IDcliente" />
+            </Principal>
+            <Dependent Role="VENTAS">
+              <PropertyRef Name="IDcliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SESION_USUARIOS">
+          <End Role="USUARIOS" Type="Self.USUARIOS" Multiplicity="1" />
+          <End Role="SESION" Type="Self.SESION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIOS">
+              <PropertyRef Name="UsuarioID" />
+            </Principal>
+            <Dependent Role="SESION">
+              <PropertyRef Name="UsuarioID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="DDBB_SupermercadoEntities2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="ARTICULO" EntityType="Self.ARTICULO" />
           <EntitySet Name="CLIENTES" EntityType="Self.CLIENTES" />
@@ -193,6 +253,14 @@
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="USUARIOS" EntityType="Self.USUARIOS" />
           <EntitySet Name="VENTAS" EntityType="Self.VENTAS" />
+          <AssociationSet Name="FK_VENTAS_CLIENTES" Association="Self.FK_VENTAS_CLIENTES">
+            <End Role="CLIENTES" EntitySet="CLIENTES" />
+            <End Role="VENTAS" EntitySet="VENTAS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SESION_USUARIOS" Association="Self.FK_SESION_USUARIOS">
+            <End Role="USUARIOS" EntitySet="USUARIOS" />
+            <End Role="SESION" EntitySet="SESION" />
+          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -241,9 +309,9 @@
             <EntityTypeMapping TypeName="DDBB_SupermercadoModel.SESION">
               <MappingFragment StoreEntitySet="SESION">
                 <ScalarProperty Name="Sesion_ID" ColumnName="Sesion ID" />
-                <ScalarProperty Name="Usuario_ID" ColumnName="Usuario ID" />
+                <ScalarProperty Name="UsuarioID" ColumnName="UsuarioID" />
                 <ScalarProperty Name="Fecha" ColumnName="Fecha" />
-                <ScalarProperty Name="Hora_incio" ColumnName="Hora incio" />
+                <ScalarProperty Name="Hora_inicio" ColumnName="Hora inicio" />
                 <ScalarProperty Name="Hora_Finalizacion" ColumnName="Hora Finalizacion" />
               </MappingFragment>
             </EntityTypeMapping>

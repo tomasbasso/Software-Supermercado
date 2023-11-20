@@ -6,6 +6,8 @@ using System.Data;
 using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
+using System.Net;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -27,6 +29,8 @@ namespace Tp2_TomasBasso
         {           
             var lista = ddbb.USUARIOS.ToList();
             dataGridView1.DataSource = lista;
+            dataGridView1.Columns["Contraseña"].Visible = false;
+            dataGridView1.Columns["UsuarioID"].Visible = false;
         }
         private void Frm_Usuario_Load(object sender, EventArgs e)
         {
@@ -36,9 +40,9 @@ namespace Tp2_TomasBasso
 
         private void btn_volver_Click(object sender, EventArgs e)
         {
-            Frm_MENU frm_MENU = new Frm_MENU();
+            
             this.Hide();
-            frm_MENU.Show();
+            
         }
 
 /////////////////////////////////////////////AGREGAR////////////////////////////////////////////////////////////////////////////////////////////////
@@ -46,29 +50,38 @@ namespace Tp2_TomasBasso
         {
             using (DDBB_SupermercadoEntities2 ddbb = new DDBB_SupermercadoEntities2())
             {
-                try
+
+                var dni = ddbb.USUARIOS.FirstOrDefault(u => u.NombreUsuario == txt_nombre.Text);
+                if (dni != null)
                 {
-                    USUARIOS user = new USUARIOS();
-                    user.UsuarioID = int.Parse(txt_id.Text);
-                    user.NombreUsuario = txt_nombre.Text;
-                    user.Celular = txt_celular.Text;
-                    user.Email = txt_email.Text;
-                    user.Acceso = cmb_acceso.Text;
-                    user.Contraseña = txt_contraseña.Text;
-                   
-                    ddbb.USUARIOS.Add(user);
-                    ddbb.SaveChanges();
-                    RefrescarGrilla();
-
-                    MessageBox.Show("El usuario "+txt_nombre.Text+" ha sido agregado con exito!");
-
-                    txt_nombre.Text = "";
-                    txt_contraseña.Text = "";
-                    txt_id.Text = "";
-                    txt_celular.Text = "";
-                    txt_email.Text = "";
+                    MessageBox.Show("Ya existe un usuario con ese nombre");
                 }
-                catch { MessageBox.Show("Error al ingresar nuevo usuario"); }
+                else
+                {
+
+                    try
+                    {
+                        USUARIOS user = new USUARIOS();
+                        user.NombreUsuario = txt_nombre.Text;
+                        user.Celular = txt_celular.Text;
+                        user.Email = txt_email.Text;
+                        user.Acceso = cmb_acceso.Text;
+                        user.Contraseña = txt_contraseña.Text;
+
+                        ddbb.USUARIOS.Add(user);
+                        ddbb.SaveChanges();
+                        RefrescarGrilla();
+
+                        MessageBox.Show("El usuario " + txt_nombre.Text + " ha sido agregado con exito!");
+
+                        txt_nombre.Text = "";
+                        txt_contraseña.Text = "";
+                    
+                        txt_celular.Text = "";
+                        txt_email.Text = "";
+                    }
+                    catch { MessageBox.Show("Error al ingresar nuevo usuario"); }
+                }
             }
         }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -95,11 +108,15 @@ namespace Tp2_TomasBasso
  ////////////////////////////////////////////EDITAR//////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void btn_Editar_Click(object sender, EventArgs e)
         {
-            
-            ddbb.SaveChanges();
-            RefrescarGrilla();
-            dataGridView1.ReadOnly = true;
-           
+            // Muestra un MessageBox de confirmación
+            DialogResult resultado = MessageBox.Show("¿Estás seguro de que deseas guardar los cambios?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.Yes)
+            {
+                ddbb.SaveChanges();
+                RefrescarGrilla();
+                dataGridView1.ReadOnly = true;
+            }
         }
 
         private void btn_habilitar_Click(object sender, EventArgs e)
@@ -110,8 +127,14 @@ namespace Tp2_TomasBasso
 /////////////////////////////////////////ELIMINAR/////////////////////////////////////////////////////////////////////////////////////
         private void btn_eliminar_Click(object sender, EventArgs e)
         {
-            using (DDBB_SupermercadoEntities2 ddbb = new DDBB_SupermercadoEntities2()) {
-                
+            // Muestra un MessageBox de confirmación
+            DialogResult resultado = MessageBox.Show("¿Estás seguro de que deseas borrar este artículo?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.Yes)
+            {
+                using (DDBB_SupermercadoEntities2 ddbb = new DDBB_SupermercadoEntities2())
+                {
+
                     if (dataGridView1.SelectedRows.Count > 0)
                     {
 
@@ -125,6 +148,7 @@ namespace Tp2_TomasBasso
                         MessageBox.Show("Seleccione un usuario para eliminar.");
                     }
                 }
+            }
             }
         private void EliminarUsuario(int usuarioId)
         {

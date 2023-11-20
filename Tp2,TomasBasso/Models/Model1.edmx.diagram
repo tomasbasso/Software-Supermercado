@@ -4,15 +4,17 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="2bf344cce2154643974607760bd5394d" Name="Diagram1">
-        <EntityTypeShape EntityType="DDBB_SupermercadoModel.ARTICULO" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DDBB_SupermercadoModel.CLIENTES" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DDBB_SupermercadoModel.PROVEEDOR" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DDBB_SupermercadoModel.SESION" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DDBB_SupermercadoModel.SUPERMERCADO" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DDBB_SupermercadoModel.sysdiagrams" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DDBB_SupermercadoModel.USUARIOS" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DDBB_SupermercadoModel.VENTAS" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
+      <Diagram DiagramId="8e7b316f7c6848a88df70890c6ff587e" Name="Diagram1">
+        <EntityTypeShape EntityType="DDBB_SupermercadoModel.ARTICULO" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DDBB_SupermercadoModel.CLIENTES" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DDBB_SupermercadoModel.PROVEEDOR" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DDBB_SupermercadoModel.SESION" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DDBB_SupermercadoModel.SUPERMERCADO" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DDBB_SupermercadoModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DDBB_SupermercadoModel.USUARIOS" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DDBB_SupermercadoModel.VENTAS" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <AssociationConnector Association="DDBB_SupermercadoModel.FK_VENTAS_CLIENTES" ManuallyRouted="false" />
+        <AssociationConnector Association="DDBB_SupermercadoModel.FK_SESION_USUARIOS" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
